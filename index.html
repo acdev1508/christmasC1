@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Christmas with C1K52 </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="merry Christmas" property="og:title" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="./script.js"></script> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" />
+</head>
+
+<body>
+    <div class="boxheart">
+        <div class="heart">
+            <h1> Tap to reveal </h1>
+        </div>
+        <div class="beat"></div>
+    </div>
+    <div class="boxchoose">
+        <h2>Wanna spend this Christmas with me?</h2>
+        <div class="listbutton">
+            <button id="no"> Never </button>
+            <button id="yes"> Yes, I'd love to!!!</button>
+        </div>
+    </div>
+    <div class="popup">
+        <!-- <div class="merry-christmas"> Merry Christmas! 🎄🎅✨ </div> -->
+        <div class="inner">
+            <h3> Merry Christmas! 🎄🎅✨ </h3>
+                    <img src="e:\Downloads\Ổ (C)\mocha2.gif" alt="" />
+                    <p> Seeing your name pop up on my phone screen makes me grin like an idiot >< </p>
+        </div>
+    </div>
+    <script>
+        const noBtn = document.querySelector("#no");
+        const yesBtn = document.querySelector("#yes");
+        let boxheart = document.querySelector(".boxheart");
+        let boxchoose = document.querySelector(".boxchoose");
+        let popup = document.querySelector(".popup");
+
+        boxheart.addEventListener("click", function () {
+            boxheart.classList.add("active");
+            boxchoose.classList.add("active");
+        });
+
+        yesBtn.addEventListener("click", function () {
+            popup.classList.add("active");
+        });
+
+        noBtn.addEventListener("mouseenter", () => {
+            const top = Math.floor(Math.random() * window.innerHeight);
+            const left = Math.floor(Math.random() * window.innerWidth);
+
+            noBtn.style.top = `${top}px`;
+            noBtn.style.left = `${left}px`;
+        });
+
+        noBtn.addEventListener('click', () => {
+            noBtn.classList.add('shake');
+        });
+
+        const heart = document.querySelector('.heart');
+        heart.addEventListener('animationiteration', () => {
+            heart.classList.toggle('flash');
+        });
+    </script>
+</body>
+
+</html>
