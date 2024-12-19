@@ -144,7 +144,7 @@ img {
 }
 
 .boxchoose button {
-    background-color: #ffffff6b;    
+    background-color: #ffffff6b;
     border: none;
     font-family: inherit;
     padding: 5px 10px;
@@ -159,7 +159,7 @@ img {
 }
 
 #yes {
-    background-color: #3f8f29;  
+    background-color: #3f8f29;
     font-size: 30px;
     padding: 12px 23px;
     color: #E6A20B;
@@ -183,7 +183,7 @@ img {
     position: absolute;
     width: 100%;
     height: 105%;
-    background: url(assets/christmas0.gif);
+    /* background: url(assets/christmas0.gif); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -246,7 +246,8 @@ img {
     font-weight: bold;
 }
 
-.snow, .snow2 {
+.snow,
+.snow2 {
     position: absolute;
     top: 0;
     left: 0;
