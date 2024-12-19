@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snowfall Landing Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #0a2e5c, #1b4965);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -5%;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.9;
+      animation: fall linear infinite, drift ease-in-out infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0vh);
+      }
+      100% {
+        transform: translateY(105vh);
+      }
+    }
+
+    @keyframes drift {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.style.left = `${Math.random() * 100}vw`;
+      snowflake.style.animationDuration = `${Math.random() * 5 + 3}s, ${Math.random() * 3 + 2}s`;
+      snowflake.style.animationDelay = `${Math.random() * 2}s`;
+      snowflake.style.opacity = `${Math.random() * 0.5 + 0.5}`;
+      document.body.appendChild(snowflake);
+
+      // Remove snowflake after animation
+      setTimeout(() => {
+        snowflake.remove();
+      }, 8000);
+    }
+
+    // Generate multiple snowflakes at intervals
+    setInterval(createSnowflake, 150);
+  </script>
+</body>
+</html>

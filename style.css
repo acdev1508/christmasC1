@@ -243,13 +243,35 @@ img {
     font-weight: bold;
 }
 
-.merry-christmas {
-    /* position: absolute; */
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffde59;
-    text-shadow: 0 0 5px #ffde59, 0 0 10px #ffd700;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: linear infinite;
+.snow, .snow2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(assets/snow.png);
+    background-position: 0 0;
+}
+
+.snow {
+    background-size: 70em;
+    animation: snowfall 30s linear infinite;
+}
+
+.snow2 {
+    background-size: 50em;
+    animation: snowfall2 30s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes snowfall {
+    100% {
+        background-position: 70em 70em;
+    }
+}
+
+@keyframes snowfall2 {
+    100% {
+        background-position: 50em 0;
+    }
 }
