@@ -35,7 +35,6 @@
     <div class="popup">
         <div class="inner">
             <h3> Merry Christmas! 🎄🎅✨ </h3>
-            <img src="e:\Downloads\Ổ (C)\mocha2.gif" alt="" />
             <p id="randomText"></p>
     </div>
     <script>
@@ -87,7 +86,7 @@
         let boxchoose = document.querySelector(".boxchoose");
         let popup = document.querySelector(".popup");
 
-        document.getElementById('randomText').value = texts[Math.floor(Math.random()*texts.length)];
+        document.getElementById('randomText').innerText = texts[Math.floor(Math.random()*texts.length)];
 
         boxheart.addEventListener("click", function () {
             boxheart.classList.add("active");

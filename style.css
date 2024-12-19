@@ -183,7 +183,10 @@ img {
     position: absolute;
     width: 100%;
     height: 105%;
-    background: url();
+    background: url(assets/christmas1.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     top: -48px;
     left: 0;
     z-index: 999;
