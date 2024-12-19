@@ -57,7 +57,7 @@ img {
 
 .heart h1 {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
@@ -74,10 +74,10 @@ img {
 .beat::after {
     content: "";
     position: fixed;
-    top: 40px;
+    top: 30px;
     width: 150px;
     height: 240px;
-    background: red;
+    background: #B41204;
     border-radius: 150px 150px 0 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
@@ -136,15 +136,15 @@ img {
 }
 
 .boxchoose h2 {
-    color: #bb051f;
+    color: #820D13;
     font-size: 30px;
     filter: drop-shadow(0 0 100px rgb(255, 0, 0));
-    text-shadow: 1px 3px 8px black;
-    margin-bottom: 50px;
+    text-shadow: 5px 3px 8px #6F371F;
+    margin-bottom: 150px;
 }
 
 .boxchoose button {
-    background-color: #ffffff6b;
+    background-color: #ffffff6b;    
     border: none;
     font-family: inherit;
     padding: 5px 10px;
@@ -159,10 +159,10 @@ img {
 }
 
 #yes {
-    background-color: #3f8f29;
+    background-color: #3f8f29;  
     font-size: 30px;
     padding: 12px 23px;
-    color: #c25f5f;
+    color: #E6A20B;
     font-weight: bold;
     margin-left: 40px;
     animation: shakeBtn 0.5s infinite alternate;
@@ -183,7 +183,7 @@ img {
     position: absolute;
     width: 100%;
     height: 105%;
-    background: url(assets/christmas1.gif);
+    background: url(assets/ebb3317fda1c44698b35003e3e18ef3e.gif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -227,7 +227,7 @@ img {
 
 .popup h3 {
     font-size: 28px;
-    color: #ed4a5d;
+    color: #C61E12;
     margin-bottom: 20px;
     text-shadow: 5px 4px 23px #fff;
     font-weight: bold;
