@@ -36,15 +36,58 @@
         <div class="inner">
             <h3> Merry Christmas! 🎄🎅✨ </h3>
             <img src="e:\Downloads\Ổ (C)\mocha2.gif" alt="" />
-            <p> Seeing your name pop up on my phone screen makes me grin like an idiot >< </p>
-        </div>
+            <p id="randomText"></p>
     </div>
     <script>
+        const texts = [
+            "Giáng Sinh đến rồi! Chúc cậu một mùa lễ an lành, ấm áp bên gia đình và người thân yêu. Mong rằng từng khoảnh khắc trong mùa Noel này sẽ ngập tràn hạnh phúc và tiếng cười.",
+            "Noel năm nay, chúc cậu luôn khỏe mạnh, vui vẻ và may mắn trong mọi việc. Những giấc mơ đẹp nhất của cậu sẽ trở thành hiện thực, giống như món quà mà Giáng Sinh mang đến.",
+            "Chúc cậu một mùa Giáng Sinh thật đặc biệt! Đầy ắp niềm vui, yêu thương và những điều ngọt ngào. Hy vọng mọi nỗ lực của cậu trong năm qua sẽ được đền đáp bằng những điều kỳ diệu trong mùa lễ hội này.",
+            "Noel là thời gian của yêu thương, sẻ chia và gắn kết. Mong rằng ánh sáng lung linh của cây thông Noel sẽ soi sáng tâm hồn cậu, mang lại niềm tin và hạnh phúc trong mọi điều.",
+            "Thời khắc Giáng Sinh, chúc cậu có những ngày thật bình yên và ý nghĩa. Cầu mong cuộc sống luôn tràn đầy những điều tốt đẹp và cậu luôn mỉm cười trên hành trình phía trước.",
+            "Giáng Sinh là mùa của yêu thương và phép màu, chúc cậu luôn được bao quanh bởi những người thân yêu và ngập tràn niềm vui. Mong mọi ước mơ đẹp nhất của cậu sẽ trở thành hiện thực trong mùa lễ này.",
+            "Noel không chỉ là mùa lễ, mà còn là dịp để cảm nhận yêu thương lan tỏa trong không khí. Chúc cậu một mùa Giáng Sinh thật trọn vẹn với những khoảnh khắc đáng nhớ và hạnh phúc bên gia đình.",
+            "Hãy để những ánh đèn Giáng Sinh thắp sáng tâm hồn cậu và mang đến niềm tin yêu vào tương lai. Chúc cậu đón mùa lễ thật đặc biệt, vui vẻ và đầy ý nghĩa.",
+            "Mùa đông lạnh, nhưng lòng người ấm áp. Chúc cậu và gia đình luôn được bảo vệ, yêu thương và trải qua mùa Giáng Sinh tràn ngập những tiếng cười giòn tan.",
+            "Giữa tiết trời se lạnh của Noel, mong cậu luôn cảm nhận được sự ấm áp từ tình yêu thương của mọi người. Chúc cậu một mùa lễ đầy ắp những món quà ý nghĩa và những giây phút bình yên.",
+            "Chúc cậu một Giáng Sinh thần kỳ! Hy vọng mọi điều may mắn và hạnh phúc sẽ đến bên cậu trong mùa lễ hội và tiếp tục đồng hành suốt năm mới.",
+            "Noel năm nay, hãy để mọi lo âu tan biến, nhường chỗ cho những niềm vui, tiếng cười và sự an nhiên. Chúc cậu một Giáng Sinh trọn vẹn với vô vàn kỷ niệm đẹp.",
+            "Thời khắc Giáng Sinh đến, chúc cậu luôn ngập tràn tình yêu thương, sức khỏe dồi dào và thành công viên mãn. Mọi điều kỳ diệu đều đang chờ đợi cậu khám phá!",
+            "Hãy để mùa Noel mang đến cho cậu thật nhiều niềm vui, bất ngờ và những phút giây sum vầy ý nghĩa. Chúc cậu đón lễ hội với trái tim đầy hy vọng và nụ cười rạng rỡ.",
+            "Cầu chúc mùa Giáng Sinh này sẽ là khởi đầu cho những điều tuyệt vời nhất trong cuộc sống của cậu. Chúc cậu luôn hạnh phúc, được yêu thương và sống hết mình trong từng khoảnh khắc.",
+            "Giáng Sinh là thời điểm để sẻ chia, cảm nhận yêu thương và tìm thấy niềm an ủi trong cuộc sống. Mong rằng cậu sẽ luôn cảm thấy được che chở và hạnh phúc không chỉ trong dịp lễ này mà cả những ngày sau.",
+            "Mùa Noel năm nay, hãy để lòng mình rộng mở, đón nhận những điều kỳ diệu. Chúc cậu một Giáng Sinh rực rỡ với ánh sáng, tiếng cười và những món quà bất ngờ từ cuộc sống.",
+            "Dịp Noel, chúc cậu có những phút giây thật bình yên, ngọt ngào bên những người quan trọng. Mong mọi điều tốt đẹp nhất luôn hiện hữu trong cuộc đời cậu.",
+            "Giáng Sinh đến rồi, hãy để niềm vui lan tỏa trong từng khoảnh khắc. Chúc cậu có một lễ hội tuyệt vời, trọn vẹn bên cạnh gia đình và những người thân yêu.",
+            "Mỗi mùa Noel là một trang ký ức đẹp. Chúc cậu viết thêm những kỷ niệm ngọt ngào và đáng nhớ trong dịp lễ này, cùng những người yêu thương nhất.",
+            "Giáng Sinh không chỉ là dịp lễ, mà còn là khoảnh khắc để chúng ta gửi gắm những yêu thương. Chúc cậu luôn vui vẻ, bình an và hạnh phúc trọn vẹn trong mùa lễ hội này.",
+            "Hãy để tiếng chuông Noel vang lên, mang theo những lời chúc tốt đẹp nhất đến cậu. Mong rằng từng ngày của cậu sẽ luôn ngập tràn niềm vui và ánh sáng.",
+            "Noel là thời điểm để cảm ơn và yêu thương, chúc cậu nhận được những điều ngọt ngào nhất từ cuộc sống và những người thân yêu.",
+            "Giữa bầu trời đầy sao của đêm Noel, chúc cậu luôn tìm thấy hạnh phúc trong những điều giản dị nhất. Hy vọng mùa lễ này sẽ tràn đầy những khoảnh khắc đáng nhớ.",
+            "Mỗi ngọn nến Giáng Sinh thắp sáng, là một lời chúc an lành gửi đến cậu. Mong rằng cậu sẽ luôn giữ được nụ cười rạng rỡ trong mọi hoàn cảnh.",
+            "Giữa những ánh đèn lấp lánh, hãy để trái tim cậu ngập tràn sự ấm áp và hy vọng. Chúc cậu một mùa Noel thật ý nghĩa bên những người quan trọng nhất.",
+            "Hơi ấm Noel không chỉ đến từ lửa, mà còn từ những yêu thương và sẻ chia. Chúc cậu đón một mùa lễ thật ấm áp, hạnh phúc bên gia đình và cậu bè.",
+            "Noel là lúc chúng ta quây quần bên nhau, tận hưởng từng giây phút bình yên. Chúc cậu luôn mạnh khỏe, thành công và tràn đầy năng lượng tích cực trong năm mới.",
+            "Mùa Giáng Sinh này, hãy để niềm vui và sự bình an lấp đầy tâm hồn cậu. Chúc cậu có những kỷ niệm đẹp đẽ, để nhớ mãi mỗi khi nghĩ về Noel.",
+            "Những ngọn đèn Noel lấp lánh, như ánh sáng dẫn đường cho niềm tin và hy vọng. Chúc cậu luôn cảm thấy yêu đời và tin tưởng vào những điều tốt đẹp sắp đến.",
+            "Giáng Sinh đến, chúc cậu đón nhận thật nhiều yêu thương, niềm vui và bất ngờ ngọt ngào. Mọi điều tốt lành nhất sẽ luôn hiện hữu quanh cậu.",
+            "Noel là khoảnh khắc để chúng ta tạm dừng, nhìn lại và cảm nhận sự bình an. Chúc cậu tận hưởng từng phút giây đáng quý trong mùa lễ này với tâm trạng hân hoan nhất.",
+            "Ánh sáng của cây thông Noel chính là biểu tượng của hy vọng và niềm vui. Chúc cậu luôn tìm thấy sự lạc quan và yêu thương trong hành trình của mình.",
+            "Đêm Giáng Sinh, hãy để những vì sao trên cao gửi lời chúc may mắn đến cậu. Mong rằng mọi thử thách sẽ trở nên dễ dàng và niềm vui luôn tràn ngập trong cuộc sống cậu.",
+            "Hãy để mùa Noel này trở thành khoảng thời gian cậu dành cho bản thân, gia đình và những điều quan trọng nhất. Chúc cậu có một kỳ lễ an lành và tràn đầy ý nghĩa.",
+            "Mùa đông lạnh giá, nhưng lòng người luôn có thể ấm áp nhờ yêu thương. Chúc cậu cảm nhận được sự quan tâm từ những người thân yêu và có một mùa Noel trọn vẹn.",
+            "Giáng Sinh không chỉ là một ngày lễ, mà là thời gian để tạo nên những kỷ niệm tuyệt vời. Chúc cậu có thật nhiều trải nghiệm ý nghĩa và vui vẻ trong dịp đặc biệt này.",
+            "Noel là mùa của phép màu, hãy tin rằng điều kỳ diệu luôn chờ đón cậu. Chúc cậu có một mùa lễ đầy ắp những bất ngờ ngọt ngào và niềm vui bất tận.",
+            "Tiếng chuông Giáng Sinh vang lên, mang theo lời chúc tốt đẹp nhất đến cậu. Mong rằng cậu sẽ luôn hạnh phúc và thành công trong mọi chặng đường.",
+            "Hãy để trái tim cậu ngập tràn ánh sáng Noel, cùng những điều tốt lành nhất. Chúc cậu một mùa lễ hội thật đáng nhớ với vô vàn khoảnh khắc yêu thương."
+        ];
         const noBtn = document.querySelector("#no");
         const yesBtn = document.querySelector("#yes");
         let boxheart = document.querySelector(".boxheart");
         let boxchoose = document.querySelector(".boxchoose");
         let popup = document.querySelector(".popup");
+
+        document.getElementById('randomText').value = texts[Math.floor(Math.random()*texts.length)];
 
         boxheart.addEventListener("click", function () {
             boxheart.classList.add("active");
